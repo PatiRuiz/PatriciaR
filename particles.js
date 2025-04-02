@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create particle array
     const particles = [];
     function init() {
-        for (let i = 0; i < 250; i++) { //modify this value to change amount of particles
+        for (let i = 0; i < 300; i++) { //modify this value to change amount of particles
             particles.push(new Particle());
         }
     }
