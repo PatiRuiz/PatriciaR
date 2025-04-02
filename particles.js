@@ -3,6 +3,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const canvas = document.getElementById('particleCanvas');
     const ctx = canvas.getContext('2d');
 
+    // Get the navbar height for the "safe zone"
+    const navbar = document.querySelector('.navbar');
+    const navbarHeight = navbar ? navbar.offsetHeight : 60; // fallback to 60px if not found
+
     // Set canvas size
     function resizeCanvas() {
         canvas.width = window.innerWidth;
@@ -32,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     class Particle {
         constructor() {
             this.x = Math.random() * canvas.width;
-            this.y = Math.random() * canvas.height;
+            this.y = Math.random() * (canvas.height - navbarHeight) + navbarHeight;
             this.size = 3;
             this.baseX = this.x;
             this.baseY = this.y;
@@ -41,7 +45,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         draw() {
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+            ctx.fillStyle = 'rgba(231, 156, 215, 0.8)';
             ctx.beginPath();
             ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
             ctx.closePath();
@@ -80,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create particle array
     const particles = [];
     function init() {
-        for (let i = 0; i < 100; i++) {
+        for (let i = 0; i < 250; i++) { //modify this value to change amount of particles
             particles.push(new Particle());
         }
     }
