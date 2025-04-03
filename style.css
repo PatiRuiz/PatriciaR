@@ -163,6 +163,10 @@ section h2::after {
 /* Update other text colors for visibility */
 .about-content p {
     color: white;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 16px;
+    padding: 2rem;
+    backdrop-filter: blur(8px);
 }
 .about-content h2 {
     font-size: 3rem;
@@ -217,7 +221,6 @@ section h2::after {
     width: 20px;
     height: 20px;
     color: var(--secondary-color);
-
 }
 
 .contact-link span {
@@ -234,7 +237,6 @@ section h2::after {
     border: 4px solid white;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
-
 
 /* Skills Section */
 
